@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1014608725613",
+    "firebase_url": "https://clubng-69705.firebaseio.com",
+    "project_id": "clubng-69705",
+    "storage_bucket": "clubng-69705.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014608725613:android:915ac835cca98186",
+        "android_client_info": {
+          "package_name": "edu.calpoly.clubng"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014608725613-2gu7hudmuekllk66ohiqgsic643c15i6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.calpoly.clubng",
+            "certificate_hash": "a353f4a7f595e0c714dcac7db744da1840cf36a3"
+          }
+        },
+        {
+          "client_id": "1014608725613-s4dpdj2sqvq604g329u5vqg8k68402q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDupCq5qmbABTh7pbzt_Dtvo_p4oOUphoc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014608725613-s4dpdj2sqvq604g329u5vqg8k68402q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
