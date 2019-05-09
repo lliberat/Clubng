@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Clubng</string>
+    <string name="Password">Password</string>
+    <string name="login">Login</string>
+    <string name="email">email</string>
+    <string name="CreateAccount">Create Account</string>
+
 </resources>
