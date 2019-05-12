@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    >
+
+   <TextView
+       android:id="@+id/profile_text"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_alignParentTop="true"
+       android:layout_centerInParent="true"
+       android:layout_marginTop="50dp"
+       android:layout_marginBottom="20dp"
+       android:fontFamily="@font/couturen"
+       android:text="PROFILE"
+       android:textColor="@color/colorAccent"
+       android:textSize="30dp" />
+
+    <EditText
+        android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_text"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="Name"
+        android:ems="10"
+        android:fontFamily="@font/couturen"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textColor="@color/colorText" />
+
+    <EditText
+        android:id="@+id/emailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nameText"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="Email"
+        android:ems="10"
+        android:fontFamily="@font/couturen"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:text="Email"
+        android:textColor="@color/colorText" />
+
+    <EditText
+        android:id="@+id/passText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailText"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="Password"
+        android:ems="10"
+        android:fontFamily="@font/couturen"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:text="Password"
+        android:textColor="@color/colorText"
+        tools:text="Password" />
+
+    <EditText
+        android:id="@+id/comfirmPassText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passText"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="confirm password"
+        android:ems="10"
+        android:fontFamily="@font/couturen"
+        android:hint="confirm password"
+        android:inputType="textPassword"
+        android:text="confirm password"
+        android:textColor="@color/colorText" />
+
+    <Button
+        android:id="@+id/logoutBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/changeBtn"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/couturen"
+        android:text="logout"
+        android:textColor="@color/colorText" />
+
+    <Button
+        android:id="@+id/changeBtn"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/comfirmPassText"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/couturen"
+        android:text="Update Changes"
+        android:textColor="@color/colorText" />
+
+
+</RelativeLayout>
