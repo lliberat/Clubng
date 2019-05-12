@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context=".MainActivity">
 
     <Button
@@ -17,7 +18,7 @@
         android:backgroundTint="@color/colorAccent"
         android:backgroundTintMode="src_in"
         android:elevation="2dp"
-        android:fontFamily="@font/couture"
+        android:fontFamily="@font/couturen"
         android:text="@string/login"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +33,7 @@
         android:layout_marginTop="336dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:fontFamily="@font/couture"
+        android:fontFamily="@font/couturen"
         android:hint="@string/email"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
@@ -74,7 +75,7 @@
         android:layout_marginEnd="8dp"
         android:autofillHints=""
         android:ems="10"
-        android:fontFamily="@font/couture"
+        android:fontFamily="@font/couturen"
         android:inputType="textPersonName"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"
@@ -93,7 +94,7 @@
         android:layout_marginBottom="8dp"
         android:autofillHints=""
         android:ems="10"
-        android:fontFamily="@font/couture"
+        android:fontFamily="@font/couturen"
         android:inputType="textPersonName"
         android:lineSpacingExtra="10sp"
         android:textAlignment="center"
