@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,10 +22,7 @@ public class ClubPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.club_page);
-
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference clubsDB = database.getReference();
+        FirebaseApp.initializeApp(this);
 
         //Should be handled by controller
         final TextView clubName = findViewById(R.id.clubName);
