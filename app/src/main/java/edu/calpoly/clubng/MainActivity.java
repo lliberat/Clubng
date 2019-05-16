@@ -21,12 +21,13 @@ public class MainActivity extends AppCompatActivity {
                 new LocationFragment()).commit(); //sets default fragment
 
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                     Fragment selectedFrag = null;
-                    switch (menuItem.getItemId()){
+                    switch (menuItem.getItemId()) {
                         case R.id.nav_profile:
                             selectedFrag = new ProfileFragment();
                             break;
