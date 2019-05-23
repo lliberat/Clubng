@@ -1,8 +1,10 @@
 package edu.calpoly.clubng;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -31,7 +33,7 @@ public class ClubPage extends AppCompatActivity {
         final TextView goldPrice = findViewById(R.id.goldPrice);
         final TextView silverPrice = findViewById(R.id.silverPrice);
         final TextView bronzePrice = findViewById(R.id.bronzePrice);
-        //Button bookButton = findViewById(R.id.bookbutton);
+        Button bookButton = findViewById(R.id.bookbutton);
 
         new FirebaseDatabaseHelper().readClubs(new FirebaseDatabaseHelper.DataStatus() {
             @Override
@@ -60,5 +62,18 @@ public class ClubPage extends AppCompatActivity {
 
             }
         });
+
+        bookButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMainActivity();
+            }
+        });
     }
+
+    public void openMainActivity(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }
