@@ -15,16 +15,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.footer);
 
 
-        BottomNavigationView bottomnav = findViewById(R.id.footer_nav);
+        BottomNavigationView bottomnav = (BottomNavigationView) findViewById(R.id.footer_nav);
         bottomnav.setOnNavigationItemSelectedListener(navListener);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.frag_container,
                 new LocationFragment()).commit(); //sets default fragment
-
-
 
     }
 
@@ -44,9 +42,14 @@ public class MainActivity extends AppCompatActivity {
                             selectedFrag = new ConfirmationFragment();
                             break;
                     }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frag_container,
-                            selectedFrag).commit();
+                    if(selectedFrag != null) {
+                        getSupportFragmentManager().beginTransaction().replace(R.id.frag_container,
+                                selectedFrag).commit();
+                    }
                     return true;
                 }
             };
+
+
+
 }
