@@ -26,7 +26,6 @@ public class ClubPage extends AppCompatActivity {
         setContentView(R.layout.club_page);
         FirebaseApp.initializeApp(this);
 
-        //Should be handled by controller
         final TextView clubName = findViewById(R.id.clubName);
         final TextView clubLoc = findViewById(R.id.clubLoc);
         final TextView clubRating = findViewById(R.id.clubRating);
