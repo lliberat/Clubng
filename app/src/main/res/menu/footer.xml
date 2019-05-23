@@ -14,7 +14,7 @@
     <item
         android:id="@+id/nav_confirmation"
         android:icon="@drawable/ic_confirmation_number_black_24dp"
-        android:title="Confimation"
+        android:title="Reservations"
         />
 
 
