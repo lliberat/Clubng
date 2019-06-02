@@ -1,10 +1,10 @@
 package edu.calpoly.clubng;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,23 +32,27 @@ public class ClubPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.club_page);
         FirebaseApp.initializeApp(this);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         final TextView clubName = findViewById(R.id.clubName);
+        final TextView clubInfo = findViewById(R.id.clubInfo);
         final TextView clubLoc = findViewById(R.id.clubLoc);
-        final TextView clubRating = findViewById(R.id.clubRating);
         final TextView goldPrice = findViewById(R.id.goldPrice);
         final TextView silverPrice = findViewById(R.id.silverPrice);
         final TextView bronzePrice = findViewById(R.id.bronzePrice);
         Button bookButton = findViewById(R.id.bookbutton);
+
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
 
         new FirebaseDatabaseHelper().readClubs(new FirebaseDatabaseHelper.DataStatus() {
             @Override
             public void DataIsLoaded(List<Club> clubs, List<String> keys) {
                 Club club = clubs.get(0);
                 clubName.setText(club.getName());
-                clubRating.setText(club.getService());
+                clubInfo.setText(club.getInfo());
                 clubLoc.setText(club.getLocation());
                 goldPrice.setText(club.getGold());
                 silverPrice.setText(club.getSilver());
@@ -81,7 +85,7 @@ public class ClubPage extends AppCompatActivity {
 
 
     public void openMainActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, PaymentController.class);
         startActivity(intent);
     }
 
@@ -91,8 +95,8 @@ public class ClubPage extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                finish();
-                return true;
+                Intent homeIntent = new Intent(this, MainActivity.class);
+                startActivity(homeIntent);
         }
 
         return super.onOptionsItemSelected(item);
