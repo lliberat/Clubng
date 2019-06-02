@@ -4,6 +4,7 @@ public class Club {
     private String name;
     private String location;
     private String info;
+    private String city;
     //Ratings
     private String service;
     private String safety;
@@ -17,7 +18,7 @@ public class Club {
     public Club() {
     }
 
-    public Club(String name, String location, String info, String service, String safety, String ambience, String locRating, String gold, String silver, String bronze) {
+    public Club(String city, String name, String location, String info, String service, String safety, String ambience, String locRating, String gold, String silver, String bronze) {
         this.name = name;
         this.location = location;
         this.info = info;
@@ -28,6 +29,7 @@ public class Club {
         this.gold = gold;
         this.silver = silver;
         this.bronze = bronze;
+        this.city = city;
     }
 
     public String getName() {
@@ -108,5 +110,13 @@ public class Club {
 
     public void setBronze(String bronze) {
         this.bronze = bronze;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String name) {
+        this.city = city;
     }
 }

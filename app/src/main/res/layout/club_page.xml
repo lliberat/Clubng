@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/colorPrimaryDark"
-    android:id="@+id/clubpage"
-    >
+    android:id="@+id/clubpage">
 
     <TextView
         android:id="@+id/clubName"
@@ -105,5 +104,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bronzePrice" />
+
+
+
 
 </android.support.constraint.ConstraintLayout>
