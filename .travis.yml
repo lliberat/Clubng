@@ -17,3 +17,6 @@ android:
   - android-$ANDROID_API
   - android-$EMULATOR_API_LEVEL
   - extra-google-m2repository
+
+before_install:
+    - yes | sdkmanager "platforms;android-28"
