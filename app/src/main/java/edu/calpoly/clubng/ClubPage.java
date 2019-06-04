@@ -49,7 +49,7 @@ public class ClubPage extends AppCompatActivity {
 
         new FirebaseDatabaseHelper().readClubs(new FirebaseDatabaseHelper.DataStatus() {
             @Override
-            public void DataIsLoaded(List<Club> clubs, List<String> keys) {
+            public void ClubIsLoaded(List<Club> clubs, List<String> keys) {
                 Club club = clubs.get(0);
                 clubName.setText(club.getName());
                 clubInfo.setText(club.getInfo());
@@ -57,6 +57,11 @@ public class ClubPage extends AppCompatActivity {
                 goldPrice.setText(club.getGold());
                 silverPrice.setText(club.getSilver());
                 bronzePrice.setText(club.getBronze());
+            }
+
+            @Override
+            public void EventIsLoaded(List<Event> events, List<String> keys){
+
             }
 
             @Override
