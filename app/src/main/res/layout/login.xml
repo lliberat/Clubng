@@ -64,7 +64,7 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EmailText"
-        app:layout_constraintVertical_bias="0.168" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <EditText
         android:id="@+id/editText3"
@@ -122,5 +122,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginBtn"
         tools:text="Sign up here" />
+
+    <TextView
+        android:id="@+id/authFailure"
+        android:layout_width="203dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Authentication Failed"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419" />
 
 </android.support.constraint.ConstraintLayout>
