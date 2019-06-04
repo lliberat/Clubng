@@ -54,9 +54,9 @@ public class ClubPage extends AppCompatActivity {
                 clubName.setText(club.getName());
                 clubInfo.setText(club.getInfo());
                 clubLoc.setText(club.getLocation());
-                goldPrice.setText(club.getGold());
-                silverPrice.setText(club.getSilver());
-                bronzePrice.setText(club.getBronze());
+                goldPrice.setText(String.valueOf(club.getGold()));
+                silverPrice.setText(String.valueOf(club.getSilver()));
+                bronzePrice.setText(String.valueOf(club.getBronze()));
             }
 
             @Override

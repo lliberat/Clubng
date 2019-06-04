@@ -23,7 +23,6 @@ public class Listings extends AppCompatActivity {
             @Override
             public void EventIsLoaded(List<Event> events, List<String> keys) {
                 new RecyclerView_Config().setConfig(mRecyclerView, Listings.this, events, keys);
-
             }
 
             @Override

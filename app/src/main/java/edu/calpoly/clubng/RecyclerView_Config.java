@@ -15,9 +15,11 @@ public class RecyclerView_Config {
     private EventAdapter mEventAdapter;
     public void setConfig(RecyclerView recyclerView, Context context, List<Event> events, List<String> keys){
         mContext = context;
-        mEventAdapter = new EventAdapter(events, keys);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        mEventAdapter = new EventAdapter(events, keys);
         recyclerView.setAdapter(mEventAdapter);
+//        mEventAdapter.notifyDataSetChanged();
     }
 
 
