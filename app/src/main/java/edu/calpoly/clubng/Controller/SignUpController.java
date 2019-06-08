@@ -17,7 +17,7 @@ import edu.calpoly.clubng.R;
 
 public class SignUpController extends AppCompatActivity {
 
-    LogInModel model = new LogInModel();
+    LogInModel model = LogInModel.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

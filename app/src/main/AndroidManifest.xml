@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PaymentController" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Controller.SignUpController" />
+        <activity android:name=".Controller.LogInController">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ClubPage" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

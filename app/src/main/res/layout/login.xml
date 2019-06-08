@@ -12,6 +12,7 @@
         android:layout_width="119dp"
         android:layout_height="58dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="176dp"
         android:background="@color/colorAccent"
@@ -23,7 +24,10 @@
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/EmailText"
@@ -32,6 +36,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="336dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
         android:fontFamily="@font/couturen"
         android:hint="@string/email"
@@ -40,9 +45,12 @@
         android:singleLine="true"
         android:text="@string/email"
         android:textColor="@color/colorText"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.008" />
 
     <EditText
         android:id="@+id/Password"
@@ -61,51 +69,10 @@
         android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/LoginBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EmailText"
-        app:layout_constraintVertical_bias="0.023" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="181dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="8dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:fontFamily="@font/couturen"
-        android:inputType="textPersonName"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Welcome To" />
-
-    <EditText
-        android:id="@+id/ClubngTxt"
-        android:layout_width="221dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:fontFamily="@font/couturen"
-        android:inputType="textPersonName"
-        android:lineSpacingExtra="10sp"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        android:textSize="45sp"
-        app:layout_constraintBottom_toTopOf="@+id/EmailText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="CLUBNG" />
+        app:layout_constraintVertical_bias="0.916" />
 
     <Button
         android:id="@+id/signUpBtn"

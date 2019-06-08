@@ -22,11 +22,21 @@ import static android.support.constraint.Constraints.TAG;
 
 public class LogInModel extends AppCompatActivity {
 
+    // implemented with singleton design pattern
+    private static LogInModel uniqueInstance;
+
     private FirebaseAuth mAuth;
+
+    private LogInModel() {}
+
+    public static LogInModel getInstance() {
+        if (uniqueInstance == null)
+            uniqueInstance = new LogInModel();
+        return uniqueInstance;
+    }
 
     public void signUp(String email, String password){
 
-        final SignUpController SUController = new SignUpController();
         FirebaseApp.initializeApp(this);
 
         // Initialize Firebase Auth
@@ -43,16 +53,15 @@ public class LogInModel extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(getApplicationContext(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            System.out.println("failed to create an account");
+                            //Toast.makeText(, "Authentication failed.",
+                                    //Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
 
-    public void logIn(String email, String password){
-
-        final LogInController LIController = new LogInController();
+    public void logIn(String email, String password) {
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -68,8 +77,9 @@ public class LogInModel extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(getApplicationContext(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            System.out.println("failed to sign in");
+                            //Toast.makeText(getApplicationContext(), "Authentication failed.",
+                            //Toast.LENGTH_SHORT).show();
                             // do not enter new activity
                         }
 
@@ -89,6 +99,37 @@ public class LogInModel extends AppCompatActivity {
             return 0;
         else
             return 1;
+    }
+
+    public void updateInfo(String newEmail, String newPassword) {
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        user.updateEmail(newEmail)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "User email address updated.");
+                        } else {
+                            // email not updated
+                        }
+                    }
+                });
+
+        user.updatePassword(newPassword)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Log.d(TAG, "User password updated.");
+                        } else {
+                            // password not updated
+                        }
+                    }
+                });
     }
 
     public void logOut()

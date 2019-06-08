@@ -18,7 +18,7 @@ import edu.calpoly.clubng.R;
 
 public class LogInController extends AppCompatActivity {
 
-    LogInModel model = new LogInModel();
+    LogInModel model = LogInModel.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class LogInController extends AppCompatActivity {
         final Button logInBtn = findViewById(R.id.LoginBtn);
         final EditText email = findViewById(R.id.EmailText);
         final EditText password = findViewById(R.id.Password);
-        final Button signUpBtn = findViewById(R.id.button);
+        final Button signUpBtn = findViewById(R.id.signUpBtn);
         final TextView authFailure = findViewById(R.id.authFailure);
 
         logInBtn.setOnClickListener(new View.OnClickListener() {
@@ -61,8 +61,9 @@ public class LogInController extends AppCompatActivity {
     public void onStart() {
         super.onStart();
 
+        if (model.checkLoggedIn() == 1)
+            startMainActivity();
 
-        model.checkLoggedIn();
     }
 
     private void startMainActivity()
