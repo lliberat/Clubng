@@ -1,10 +1,12 @@
 package edu.calpoly.clubng;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -39,7 +41,6 @@ public class RecyclerView_Config {
             mDate = (TextView) itemView.findViewById(R.id.textView_eventDate);
             mArtist = (TextView) itemView.findViewById(R.id.textView_eventArtist);
             mCity = (TextView) itemView.findViewById(R.id.textView_eventCity);
-
         }
         public void bind(Event event, String key){
             date = String.valueOf(event.getMonth())+"/"+String.valueOf(event.getDay())+"/"+String.valueOf(event.getYear());
@@ -48,6 +49,14 @@ public class RecyclerView_Config {
             mCity.setText(event.getCity());
             mArtist.setText(event.getArtist());
             this.key = key;
+            mName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //mName.setText("clicked");
+                    Intent intent = new Intent(v.getContext(), ClubPage.class);
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
     }
     class EventAdapter extends RecyclerView.Adapter<EventItemView>{
@@ -74,5 +83,7 @@ public class RecyclerView_Config {
         public int getItemCount() {
             return mEventList.size();
         }
+
+
     }
 }

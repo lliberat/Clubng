@@ -4,14 +4,15 @@ public class Event {
     private String artist;
     private String city;
     private String club;
-    private Long day;
-    private Long month;
-    private Long year;
+
+    private String day;
+    private String month;
+    private String year;
 
     public Event() {
     }
 
-    public Event(String artist, String city, String club, Long day, Long month, Long year) {
+    public Event(String artist, String city, String club, String day, String month, String year) {
         this.artist = artist;
         this.city = city;
         this.club = club;
@@ -44,27 +45,27 @@ public class Event {
         this.club = club;
     }
 
-    public Long getDay() {
-        return day;
+    public String getDay() {
+        return String.valueOf(day);
     }
 
-    public void setDay(Long day) {
+    public void setDay(String day) {
         this.day = day;
     }
 
-    public Long getMonth() {
-        return month;
+    public String getMonth() {
+        return String.valueOf(month);
     }
 
-    public void setMonth(Long month) {
+    public void setMonth(String month) {
         this.month = month;
     }
 
-    public Long getYear() {
-        return year;
+    public String getYear() {
+        return String.valueOf(year);
     }
 
-    public void setYear(Long year) {
+    public void setYear(String year) {
         this.year = year;
     }
 }
