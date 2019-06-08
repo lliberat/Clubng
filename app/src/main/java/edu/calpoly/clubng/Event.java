@@ -26,6 +26,9 @@ public class Event {
     }
 
     public void setArtist(String artist) {
+        if(artist == null || artist.length() < 1)  {
+            throw new IllegalArgumentException("Artist string cannot be empty/null");
+        }
         this.artist = artist;
     }
 
@@ -34,6 +37,9 @@ public class Event {
     }
 
     public void setCity(String city) {
+        if(city == null || city.length() < 1) {
+            throw new IllegalArgumentException("City string cannot be empty/null");
+        }
         this.city = city;
     }
 
@@ -42,6 +48,9 @@ public class Event {
     }
 
     public void setClub(String club) {
+        if(club == null || club.length() < 1) {
+            throw new IllegalArgumentException("Club string cannot be null/empty");
+        }
         this.club = club;
     }
 
@@ -50,6 +59,9 @@ public class Event {
     }
 
     public void setDay(String day) {
+        if(day == null) {
+            throw new IllegalArgumentException("Day value cannot be null");
+        }
         if (Integer.valueOf(day) < 1 || Integer.valueOf(day) > 31 ){
             throw new IllegalArgumentException("Day cannot be less than 1 or larger than 31!");
         }
@@ -61,6 +73,9 @@ public class Event {
     }
 
     public void setMonth(String month) {
+        if(month == null) {
+            throw new IllegalArgumentException("Month value cannot be null");
+        }
         if (Integer.valueOf(month) < 1 || Integer.valueOf(month) > 12 ){
             throw new IllegalArgumentException("Month cannot be less than 1 or larger than 12!");
         }
@@ -72,6 +87,9 @@ public class Event {
     }
 
     public void setYear(String year) {
+        if(year == null) {
+            throw new IllegalArgumentException("Year value cannot be null");
+        }
         if (Integer.valueOf(year) < 2019){
             throw new IllegalArgumentException("Year cannot be less than 2019!");
         }

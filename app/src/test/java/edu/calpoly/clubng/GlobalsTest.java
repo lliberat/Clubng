@@ -54,7 +54,7 @@ public class GlobalsTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void globals_EmptyArtistTest() {
+    public void globals_EmptyClubNameTest() {
         Globals g = Globals.getInstance();
 
         g.setClubName("");

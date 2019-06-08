@@ -47,7 +47,51 @@ public class EventTest {
     public void event_EmptyArtistTest() {
         Event e = new Event();
 
+        e.setArtist("");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void event_NullMonthTest() {
+        Event e = new Event();
+
+        e.setMonth(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void event_NullDayTest() {
+        Event e = new Event();
+
+        e.setDay(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void event_NullYearTest() {
+        Event e = new Event();
+
+        e.setYear(null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void event_EmptyClubTest() {
+        Event e = new Event();
+
         e.setClub("");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void event_YearBeforeNowTest() {
+        Event e = new Event();
+
+        e.setYear("1994");
+    }
+
+    @Test
+    public void event_SetandGetYear() {
+        Event e = new Event();
+
+        e.setYear("2020");
+
+        assertEquals(e.getYear(),"2020");
     }
 
 }

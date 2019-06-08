@@ -21,6 +21,9 @@ public class Globals {
     }
 
     public void setCity(String city) {
+        if(city.length() < 1) {
+            throw new IllegalArgumentException("City string cannot be empty/null");
+        }
         this.city = city;
     }
 
@@ -64,6 +67,9 @@ public class Globals {
     }
 
     public void setClubName(String clubName) {
+        if(clubName.length() < 1) {
+            throw new IllegalArgumentException("Clubname cannot be null");
+        }
         this.clubName = clubName;
     }
 
