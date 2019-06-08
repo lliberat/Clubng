@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/colorPrimaryDark"
     android:layout_height="match_parent">
 
     <Button
@@ -18,7 +17,7 @@
         android:backgroundTint="@color/colorAccent"
         android:backgroundTintMode="src_in"
         android:elevation="2dp"
-        android:fontFamily="@font/couturebold"
+        android:fontFamily="@font/couture"
         android:text="@string/CreateAccount"
         android:textColor="@color/colorText"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,8 +36,7 @@
         android:layout_marginEnd="8dp"
         android:autofillHints=""
         android:ems="10"
-
-        android:fontFamily="@font/couturen"
+        android:fontFamily="@font/couture"
         android:inputType="textPersonName"
         android:textColor="@color/colorPrimary"
         android:textSize="24sp"
@@ -54,7 +52,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/couturen"
+        android:fontFamily="@font/couture"
         android:lineSpacingExtra="10sp"
         android:text="@string/app_name"
         android:textAlignment="center"
@@ -72,14 +70,9 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="8dp"
-        android:contentDescription="@string/email"
         android:ems="10"
-        android:fontFamily="@font/couturen"
-        android:hint="@string/email"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
-        android:text="@string/email"
-        android:textColor="@color/colorText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CLUBNG" />
@@ -92,10 +85,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:fontFamily="@font/couturen"
         android:inputType="textPassword"
-        android:text="@string/Password"
-        android:textColor="@color/colorText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
@@ -108,11 +98,8 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:fontFamily="@font/couturen"
         android:importantForAutofill="no"
         android:inputType="textPassword"
-        android:text="@string/Password"
-        android:textColor="@color/colorText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText4" />
