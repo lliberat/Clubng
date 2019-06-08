@@ -81,6 +81,28 @@ public class RecyclerView_Config {
 
         @Override
         public void onBindViewHolder(@NonNull EventItemView eventItemView, int i) {
+//            Globals g = Globals.getInstance();
+//            String city = g.getCity();
+//            String year = g.getYear();
+//            String month = g.getMonth();
+//            String day = g.getDay();
+//
+//            Event event = mEventList.get(i);
+//
+//            if((""+event.getCity()).equals(city) &&
+//                    (""+event.getYear()).equals(year) &&
+//                    (""+event.getMonth()).equals(month) &&
+//                    (""+event.getDay()).equals(day)){
+//                eventItemView.bind(mEventList.get(i), mKeys.get(i));
+//            }else{
+////                mEventList.remove(i);
+////                mKeys.remove(i);
+//            }
+//            if((""+event.getCity()).equals(city)){
+//                eventItemView.bind(mEventList.get(i), mKeys.get(i));
+//            }else{
+//                ;
+//            }
             eventItemView.bind(mEventList.get(i), mKeys.get(i));
         }
 

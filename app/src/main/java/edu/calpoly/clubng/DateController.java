@@ -30,7 +30,7 @@ public class DateController extends AppCompatActivity {
             public void onClick(View v) {
                 DatePicker picker = findViewById(R.id.datePicker);
                 g.setDay(Integer.toString(picker.getDayOfMonth()));
-                g.setMonth(Integer.toString(picker.getMonth()));
+                g.setMonth(Integer.toString(picker.getMonth()+1));
                 g.setYear(Integer.toString(picker.getYear()));
                 Intent i = new Intent(DateController.this, Listings.class);
                 startActivity(i);
