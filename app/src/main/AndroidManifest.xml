@@ -13,11 +13,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".DateController"></activity>
         <activity android:name=".Listings">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        </activity>
+        <activity android:name=".MainActivity"><intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
         <activity android:name=".PaymentController"></activity>
         <activity android:name=".ClubPage"></activity>

@@ -97,7 +97,7 @@ public class ClubPage extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent homeIntent = new Intent(this, DatePicker.class);
+                Intent homeIntent = new Intent(this, DateController.class);
                 startActivity(homeIntent);
         }
 
