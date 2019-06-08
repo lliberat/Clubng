@@ -18,7 +18,6 @@ before_install:
 # Update remaining dependencies and accept licenses
   - yes | sdkmanager --update &>/dev/null
   - yes | sdkmanager --licenses &>/dev/null
-  - echo yes | android update sdk --all --filter build-tools-28.0.3 --no-ui --force
 # Setup emulator
   - echo "no" | avdmanager create avd -n test -k "system-images;android-24;default;x86_64" -c 200M -f &>/dev/null
   - $ANDROID_HOME/emulator/emulator -avd test -no-audio -no-accel -no-snapshot -no-window -camera-back none -camera-front none & &>/dev/null
