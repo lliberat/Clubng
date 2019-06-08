@@ -8,10 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.FirebaseApp;
-
-import edu.calpoly.clubng.LocationFragment;
-import edu.calpoly.clubng.MainActivity;
 import edu.calpoly.clubng.Model.LogInModel;
 import edu.calpoly.clubng.R;
 

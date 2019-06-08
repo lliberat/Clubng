@@ -1,4 +1,4 @@
-package edu.calpoly.clubng;
+package edu.calpoly.clubng.Controller;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,10 +15,13 @@ import android.widget.EditText;
 import edu.calpoly.clubng.Controller.LogInController;
 import edu.calpoly.clubng.Controller.SignUpController;
 import edu.calpoly.clubng.Model.LogInModel;
+import edu.calpoly.clubng.Model.UserModel;
+import edu.calpoly.clubng.R;
 
 public class ProfileFragment extends Fragment {
 
-    LogInModel model = LogInModel.getInstance();
+    LogInModel logInModel = LogInModel.getInstance();
+    UserModel userModel = UserModel.getInstance();
 
     @Nullable
     @Override
@@ -34,9 +37,8 @@ public class ProfileFragment extends Fragment {
         logOutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                model.logOut();
+                logInModel.logOut();
                 startActivity(new Intent(getActivity(), LogInController.class));
-
             }
         });
 
@@ -45,12 +47,8 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 String newEmail = inputEmail.getText().toString();
                 String newPassword = inputPassword.getText().toString();
-                String confirmPassword = inputConfirm.getText().toString();
 
-                if (newPassword.equals(confirmPassword))
-                {
-                    model.updateInfo(newEmail, newPassword);
-                }
+                logInModel.updateInfo(newEmail);
             }
         });
 

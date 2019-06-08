@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ClubPage" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Controller.MainActivity" />
     </application>
 
 </manifest>

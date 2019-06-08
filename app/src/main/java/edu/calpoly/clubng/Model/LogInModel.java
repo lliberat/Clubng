@@ -1,11 +1,8 @@
 package edu.calpoly.clubng.Model;
 
-import android.app.Application;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -13,10 +10,6 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import edu.calpoly.clubng.Controller.LogInController;
-import edu.calpoly.clubng.Controller.SignUpController;
-import edu.calpoly.clubng.MainActivity;
 
 import static android.support.constraint.Constraints.TAG;
 
@@ -97,11 +90,13 @@ public class LogInModel extends AppCompatActivity {
 
         if (currentUser == null)
             return 0;
-        else
+        else {
+            System.out.println("\nUser ID: " + mAuth.getCurrentUser().getUid() + "\n");
             return 1;
+        }
     }
 
-    public void updateInfo(String newEmail, String newPassword) {
+    public void updateInfo(String newEmail) {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
@@ -119,6 +114,7 @@ public class LogInModel extends AppCompatActivity {
                     }
                 });
 
+        /*
         user.updatePassword(newPassword)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -130,6 +126,7 @@ public class LogInModel extends AppCompatActivity {
                         }
                     }
                 });
+        */
     }
 
     public void logOut()
