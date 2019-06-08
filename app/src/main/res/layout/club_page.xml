@@ -124,7 +124,8 @@
         app:layout_constraintEnd_toStartOf="@+id/goldPrice"
         app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clubLoc" />
+        app:layout_constraintTop_toBottomOf="@+id/clubLoc"
+        android:onClick="onCheckboxClicked"/>/>
 
     <CheckBox
         android:id="@+id/checkBox2"
@@ -144,7 +145,8 @@
         app:layout_constraintHorizontal_bias="0.744"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.6"
+        android:onClick="onCheckboxClicked"/>/>
 
     <CheckBox
         android:id="@+id/checkBox3"
@@ -161,7 +163,8 @@
         app:layout_constraintBottom_toTopOf="@+id/bookbutton"
         app:layout_constraintEnd_toStartOf="@+id/bronzePrice"
         app:layout_constraintHorizontal_bias="0.892"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="onCheckboxClicked"/>/>
 
 
 </android.support.constraint.ConstraintLayout>

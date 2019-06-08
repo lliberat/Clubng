@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.google.firebase.FirebaseApp;
@@ -22,6 +23,8 @@ public class ClubPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.club_page);
         FirebaseApp.initializeApp(this);
+
+
 
         final TextView clubName = findViewById(R.id.clubName);
         final TextView clubInfo = findViewById(R.id.clubInfo);
@@ -55,7 +58,13 @@ public class ClubPage extends AppCompatActivity {
                 goldPrice.setText(String.valueOf(club.getGold()));
                 silverPrice.setText(String.valueOf(club.getSilver()));
                 bronzePrice.setText(String.valueOf(club.getBronze()));
+
+
             }
+
+
+
+
 
             @Override
             public void EventIsLoaded(List<Event> events, List<String> keys){
@@ -81,23 +90,19 @@ public class ClubPage extends AppCompatActivity {
         bookButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMainActivity();
+                Intent intent = new Intent(ClubPage.this, PaymentController.class);
+                startActivity(intent);
             }
         });
     }
 
-
-    public void openMainActivity(){
-        Intent intent = new Intent(this, PaymentController.class);
-        startActivity(intent);
-    }
 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent homeIntent = new Intent(this, DateController.class);
+                Intent homeIntent = new Intent(this, Listings.class);
                 startActivity(homeIntent);
         }
 
@@ -106,6 +111,29 @@ public class ClubPage extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu(Menu menu) {
         return true;
+    }
+
+
+    public void onCheckboxClicked(View v){
+        final TextView goldPrice = findViewById(R.id.goldPrice);
+        final TextView silverPrice = findViewById(R.id.silverPrice);
+        final TextView bronzePrice = findViewById(R.id.bronzePrice);
+
+        Globals g = Globals.getInstance();
+        CheckBox gold = findViewById(R.id.checkBox);
+        CheckBox silver = findViewById(R.id.checkBox2);
+        CheckBox bronze = findViewById(R.id.checkBox3);
+
+        if (gold.isChecked()){
+            g.setPrice(Long.valueOf((String) goldPrice.getText()));
+        }
+        else if (silver.isChecked()){
+            g.setPrice(Long.valueOf((String) silverPrice.getText()));
+        }
+        else if(bronze.isChecked()){
+            g.setPrice(Long.valueOf((String) bronzePrice.getText()));
+        }
+
     }
 
 }
