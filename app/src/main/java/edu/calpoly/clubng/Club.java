@@ -4,30 +4,25 @@ public class Club {
     private String name;
     private String location;
     private String info;
+    private String city;
     //Ratings
-    private String service;
-    private String safety;
-    private String ambience;
-    private String locRating;
+
     //Prices
-    private String gold;
-    private String silver;
-    private String bronze;
+    private Long gold;
+    private Long silver;
+    private Long bronze;
 
     public Club() {
     }
 
-    public Club(String name, String location, String info, String service, String safety, String ambience, String locRating, String gold, String silver, String bronze) {
+    public Club(String city, String name, String location, String info,  Long gold, Long silver, Long bronze) {
         this.name = name;
         this.location = location;
         this.info = info;
-        this.service = service;
-        this.safety = safety;
-        this.ambience = ambience;
-        this.locRating = locRating;
         this.gold = gold;
         this.silver = silver;
         this.bronze = bronze;
+        this.city = city;
     }
 
     public String getName() {
@@ -54,59 +49,35 @@ public class Club {
         this.info = info;
     }
 
-    public String getService() {
-        return service;
-    }
-
-    public void setService(String service) {
-        this.service = service;
-    }
-
-    public String getSafety() {
-        return safety;
-    }
-
-    public void setSafety(String safety) {
-        this.safety = safety;
-    }
-
-    public String getAmbience() {
-        return ambience;
-    }
-
-    public void setAmbience(String ambience) {
-        this.ambience = ambience;
-    }
-
-    public String getLocRating() {
-        return locRating;
-    }
-
-    public void setLocRating(String locRating) {
-        this.locRating = locRating;
-    }
-
     public String getGold() {
-        return gold;
+        return String.valueOf(gold);
     }
 
-    public void setGold(String gold) {
+    public void setGold(Long gold) {
         this.gold = gold;
     }
 
     public String getSilver() {
-        return silver;
+        return String.valueOf(silver);
     }
 
-    public void setSilver(String silver) {
+    public void setSilver(Long silver) {
         this.silver = silver;
     }
 
     public String getBronze() {
-        return bronze;
+        return String.valueOf(bronze);
     }
 
-    public void setBronze(String bronze) {
+    public void setBronze(Long bronze) {
         this.bronze = bronze;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String name) {
+        this.city = city;
     }
 }

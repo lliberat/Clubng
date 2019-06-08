@@ -8,13 +8,13 @@
         />
     <item
         android:id="@+id/nav_location"
-        android:icon="@drawable/ic_location_on_black_24dp"
-        android:title="Location"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Search"
         />
     <item
         android:id="@+id/nav_confirmation"
         android:icon="@drawable/ic_confirmation_number_black_24dp"
-        android:title="Confimation"
+        android:title="Reservation"
         />
 
 
