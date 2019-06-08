@@ -1,38 +1,27 @@
 package edu.calpoly.clubng;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
 public class ClubPage extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.club_page);
         FirebaseApp.initializeApp(this);
-
 
         final TextView clubName = findViewById(R.id.clubName);
         final TextView clubInfo = findViewById(R.id.clubInfo);
@@ -53,11 +42,11 @@ public class ClubPage extends AppCompatActivity {
                 Club club = clubs.get(0);
                 Globals g = Globals.getInstance();
                 String cName = g.getClubName();
-                for (int i = 0; i < clubs.size(); i++) {
-                    Log.d("Club", clubs.get(i).getName());
-                    if (clubs.get(i).getName().equals(cName)){
-                        club = clubs.get(i);
-                        //break;
+                for (Club c: clubs) {
+                    //Log.d("myTag", ""+c.getName());
+                    if ((""+c.getName()).equals(cName)){
+                        club = c;
+                        break;
                     }
                 }
                 clubName.setText(club.getName());
@@ -104,12 +93,11 @@ public class ClubPage extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent homeIntent = new Intent(this, DatePicker.class);
+                Intent homeIntent = new Intent(this, DateController.class);
                 startActivity(homeIntent);
         }
 
