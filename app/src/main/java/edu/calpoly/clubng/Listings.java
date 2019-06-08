@@ -1,13 +1,12 @@
 package edu.calpoly.clubng;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import java.util.List;
 
@@ -55,7 +54,7 @@ public class Listings extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                Intent homeIntent = new Intent(this, DatePicker.class);
+                Intent homeIntent = new Intent(this, DateController.class);
                 startActivity(homeIntent);
         }
 
