@@ -12,9 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DateController"></activity>
-        <activity android:name=".Listings">
+        <activity android:name=".MainActivity">
         </activity>
-        <activity android:name=".MainActivity"><intent-filter>
+        <activity android:name=".Listings"><intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />

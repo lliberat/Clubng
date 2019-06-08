@@ -63,10 +63,11 @@
         tools:layout_editor_absoluteY="56dp" />
 
     <Button
-        android:id="@+id/buttonTransparent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="3dp" />
+        android:id="@+id/button_transparent"
+        android:layout_width="400dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="5dp" />
 
 </android.support.constraint.ConstraintLayout>

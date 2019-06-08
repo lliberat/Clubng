@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -31,6 +32,7 @@ public class RecyclerView_Config {
         private TextView mArtist;
         private TextView mCity;
         private String date;
+        private Button mButton;
 
         private String key;
 
@@ -41,6 +43,7 @@ public class RecyclerView_Config {
             mDate = (TextView) itemView.findViewById(R.id.textView_eventDate);
             mArtist = (TextView) itemView.findViewById(R.id.textView_eventArtist);
             mCity = (TextView) itemView.findViewById(R.id.textView_eventCity);
+            mButton = (Button) itemView.findViewById(R.id.button_transparent);
         }
         public void bind(Event event, String key){
             date = String.valueOf(event.getMonth())+"/"+String.valueOf(event.getDay())+"/"+String.valueOf(event.getYear());
@@ -49,7 +52,7 @@ public class RecyclerView_Config {
             mCity.setText(event.getCity());
             mArtist.setText(event.getClub());
             this.key = key;
-            mName.setOnClickListener(new View.OnClickListener() {
+            mButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //mName.setText("clicked");
