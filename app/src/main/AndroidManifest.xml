@@ -14,14 +14,18 @@
         <activity android:name=".DateController"></activity>
         <activity android:name=".Listings">
         </activity>
-        <activity android:name=".MainActivity"><intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+        <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".PaymentController"></activity>
         <activity android:name=".ClubPage"></activity>
+        <activity android:name=".LogInController">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SignUpController"></activity>
     </application>
 
 </manifest>
