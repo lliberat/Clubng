@@ -33,7 +33,6 @@ public class ClubPage extends AppCompatActivity {
         setContentView(R.layout.club_page);
         FirebaseApp.initializeApp(this);
 
-
         final TextView clubName = findViewById(R.id.clubName);
         final TextView clubInfo = findViewById(R.id.clubInfo);
         final TextView clubLoc = findViewById(R.id.clubLoc);
@@ -53,11 +52,11 @@ public class ClubPage extends AppCompatActivity {
                 Club club = clubs.get(0);
                 Globals g = Globals.getInstance();
                 String cName = g.getClubName();
-                for (int i = 0; i < clubs.size(); i++) {
-                    Log.d("Club", clubs.get(i).getName());
-                    if (clubs.get(i).getName().equals(cName)){
-                        club = clubs.get(i);
-                        //break;
+                for (Club c: clubs) {
+                    //Log.d("myTag", ""+c.getName());
+                    if ((""+c.getName()).equals(cName)){
+                        club = c;
+                        break;
                     }
                 }
                 clubName.setText(club.getName());
@@ -102,7 +101,6 @@ public class ClubPage extends AppCompatActivity {
         Intent intent = new Intent(this, PaymentController.class);
         startActivity(intent);
     }
-
 
 
     @Override
