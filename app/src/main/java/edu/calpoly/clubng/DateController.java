@@ -8,11 +8,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 
 public class DateController extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final Globals g = Globals.getInstance();
+        final DatePicker picker = findViewById(R.id.datePicker);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_date_picker);
         ActionBar actionBar = getSupportActionBar();
@@ -25,6 +28,9 @@ public class DateController extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                g.setDay(Integer.toString(picker.getDayOfMonth()));
+                g.setMonth(Integer.toString(picker.getMonth()+1));
+                g.setYear(Integer.toString(picker.getYear()));
                 Intent i = new Intent(DateController.this, Listings.class);
                 startActivity(i);
             }
