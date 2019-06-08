@@ -44,10 +44,10 @@ public class RecyclerView_Config {
         }
         public void bind(Event event, String key){
             date = String.valueOf(event.getMonth())+"/"+String.valueOf(event.getDay())+"/"+String.valueOf(event.getYear());
-            mName.setText(event.getClub());
+            mName.setText(event.getArtist());
             mDate.setText(date);
             mCity.setText(event.getCity());
-            mArtist.setText(event.getArtist());
+            mArtist.setText(event.getClub());
             this.key = key;
             mName.setOnClickListener(new View.OnClickListener() {
                 @Override

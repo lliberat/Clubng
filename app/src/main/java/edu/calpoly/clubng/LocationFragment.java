@@ -21,7 +21,7 @@ public class LocationFragment extends Fragment {
         clickButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), ClubPage.class);
+                Intent i = new Intent(getActivity(), DatePicker.class);
                 startActivity(i);
             }
         });
