@@ -13,8 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="Name"
         android:fontFamily="@font/couturen"
+        android:text="Name"
         android:textColor="@color/colorPrimary"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,11 +23,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/clubLoc"
+        android:id="@+id/clubInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Club Info"
         android:layout_marginTop="24dp"
-        android:text="Location"
         android:fontFamily="@font/couturen"
         android:textColor="@color/colorPrimary"
         android:textSize="15dp"
@@ -37,44 +40,45 @@
         app:layout_constraintTop_toBottomOf="@+id/clubName" />
 
     <TextView
-        android:id="@+id/clubRating"
+        android:id="@+id/clubLoc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Rating"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/couturen"
+        android:text="Location"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clubLoc" />
+        app:layout_constraintTop_toBottomOf="@+id/clubInfo" />
+
 
     <TextView
         android:id="@+id/goldPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Gold"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
-        android:textSize="24sp"
+        android:layout_marginTop="48dp"
         android:fontFamily="@font/couturen"
+        android:text="Gold"
+        android:textColor="@color/colorText"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.604"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clubRating" />
+        app:layout_constraintTop_toBottomOf="@+id/clubLoc" />
 
     <TextView
         android:id="@+id/silverPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Silver"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
-        android:textSize="24sp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/couturen"
+        android:text="Silver"
+        android:textColor="@color/colorText"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.684"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/goldPrice" />
 
@@ -82,13 +86,13 @@
         android:id="@+id/bronzePrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Bronze"
-        android:textColor="@color/common_google_signin_btn_text_dark_pressed"
-        android:textSize="24sp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/couturen"
+        android:text="Bronze"
+        android:textColor="@color/colorText"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/silverPrice" />
 
@@ -97,15 +101,67 @@
         style="@android:style/Widget.Material.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/couturen"
         android:text="Book Now"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bronzePrice" />
 
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="15dp"
+        android:buttonTint="@color/colorText"
+        android:fontFamily="@font/couturebold"
+        android:text="GOLD"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/goldPrice"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clubLoc" />
 
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:buttonTint="@color/colorText"
+        android:fontFamily="@font/couturebold"
+        android:text="SILVER"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/checkBox3"
+        app:layout_constraintEnd_toStartOf="@+id/silverPrice"
+        app:layout_constraintHorizontal_bias="0.744"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="60dp"
+        android:buttonTint="@color/colorText"
+        android:fontFamily="@font/couturebold"
+        android:text="BRONZE"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/bookbutton"
+        app:layout_constraintEnd_toStartOf="@+id/bronzePrice"
+        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
