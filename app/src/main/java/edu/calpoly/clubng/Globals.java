@@ -25,10 +25,14 @@ public class Globals {
     }
 
     public String getYear() {
+
         return year;
     }
 
     public void setYear(String year) {
+        if (Integer.valueOf(year) < 2019){
+            throw new IllegalArgumentException("Year cannot be less than 2019!");
+        }
         this.year = year;
     }
 
@@ -37,6 +41,9 @@ public class Globals {
     }
 
     public void setMonth(String month) {
+        if (Integer.valueOf(month) < 1 || Integer.valueOf(month) > 12 ){
+            throw new IllegalArgumentException("Month cannot be less than 1 or larger than 12!");
+        }
         this.month = month;
     }
 
@@ -45,6 +52,10 @@ public class Globals {
     }
 
     public void setDay(String day) {
+        if (Integer.valueOf(day) < 1 || Integer.valueOf(day) > 31 ){
+            throw new IllegalArgumentException("Day cannot be less than 1 or larger than 31!");
+        }
+
         this.day = day;
     }
 
