@@ -55,6 +55,8 @@ public class RecyclerView_Config {
                     //mName.setText("clicked");
                     Intent intent = new Intent(v.getContext(), ClubPage.class);
                     v.getContext().startActivity(intent);
+                    Globals g = Globals.getInstance();
+                    g.setClubName(String.valueOf(mArtist.getText()));
                 }
             });
         }

@@ -51,6 +51,15 @@ public class ClubPage extends AppCompatActivity {
             @Override
             public void ClubIsLoaded(List<Club> clubs, List<String> keys) {
                 Club club = clubs.get(0);
+                Globals g = Globals.getInstance();
+                String cName = g.getClubName();
+                for (int i = 0; i < clubs.size(); i++) {
+                    Log.d("Club", clubs.get(i).getName());
+                    if (clubs.get(i).getName().equals(cName)){
+                        club = clubs.get(i);
+                        //break;
+                    }
+                }
                 clubName.setText(club.getName());
                 clubInfo.setText(club.getInfo());
                 clubLoc.setText(club.getLocation());
