@@ -45,7 +45,7 @@ public class RecyclerView_Config {
             mCity = (TextView) itemView.findViewById(R.id.textView_eventCity);
             mButton = (Button) itemView.findViewById(R.id.button_transparent);
         }
-        public void bind(Event event, String key){
+        public void bind(final Event event, String key){
             date = String.valueOf(event.getMonth())+"/"+String.valueOf(event.getDay())+"/"+String.valueOf(event.getYear());
             mName.setText(event.getArtist());
             mDate.setText(date);
@@ -55,11 +55,16 @@ public class RecyclerView_Config {
             mButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    // set globals for event
+                    Globals g = Globals.getInstance();
+                    g.setClubName(String.valueOf(mArtist.getText()));
+                    g.setEvent(event);
+
                     //mName.setText("clicked");
                     Intent intent = new Intent(v.getContext(), ClubPage.class);
                     v.getContext().startActivity(intent);
-                    Globals g = Globals.getInstance();
-                    g.setClubName(String.valueOf(mArtist.getText()));
+
                 }
             });
         }

@@ -12,7 +12,7 @@ public class User {
     public User(String userID, String email) {
         this.userID = userID;
         this.email = email;
-        this.reservations = null;
+        this.reservations = new ArrayList<Event>();
     }
 
     public String getUserID() { return this.userID; }
@@ -27,7 +27,7 @@ public class User {
 
     public void setReservations(ArrayList<Event> reservations) { this.reservations = reservations; }
 
-    public void addReservation(Event newReservation) {this.reservations.add(newReservation); }
+    public void addReservation(Event newReservation) { this.reservations.add(newReservation); }
 
     /*
     // returns the event with the soonest date
