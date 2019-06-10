@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Listings extends AppCompatActivity {
@@ -31,7 +32,26 @@ public class Listings extends AppCompatActivity {
 
             @Override
             public void EventIsLoaded(List<Event> events, List<String> keys) {
-                new RecyclerView_Config().setConfig(mRecyclerView, Listings.this, events, keys);
+                Globals g = Globals.getInstance();
+                String city = g.getCity();
+                String year = g.getYear();
+                String month = g.getMonth();
+                String day = g.getDay();
+
+                List<Event> e = new ArrayList<Event>();
+                List<String> k = new ArrayList<String>();
+
+
+                for(int i = 0; i < events.size(); i++){
+                    if((""+events.get(i).getCity()).equals(city) &&
+                            (""+events.get(i).getYear()).equals(year) &&
+                            (""+events.get(i).getMonth()).equals(month) &&
+                            (""+events.get(i).getDay()).equals(day)){
+                        e.add(events.get(i));
+                        k.add(keys.get(i));
+                    }
+                }
+                new RecyclerView_Config().setConfig(mRecyclerView, Listings.this, e, k);
             }
 
             @Override

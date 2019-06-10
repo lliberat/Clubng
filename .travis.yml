@@ -36,7 +36,7 @@ android:
   - build-tools-$ANDROID_BUILD_TOOLS
   - android-$ANDROID_API
   - android-$EMULATOR_API_LEVEL
-  - sys-img-armeabi-v7a-android-$ANDROID_API
+<<<<<<< HEAD
   - extra-google-m2repository
 
 before_script:

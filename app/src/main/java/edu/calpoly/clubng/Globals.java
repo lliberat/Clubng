@@ -12,6 +12,7 @@ public class Globals {
     private Event event;
     private String priceLev;
     private Long price;
+    private User user;
 
     // Restrict the constructor from being instantiated
     private Globals(){}
@@ -96,6 +97,10 @@ public class Globals {
     public void setPrice(Long price) {
         this.price = price;
     }
+
+    public User getUser() { return this.user; }
+
+    public void setUser(User user) { this.user = user; }
 
     public static synchronized Globals getInstance(){
         if(instance==null){

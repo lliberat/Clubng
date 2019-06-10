@@ -28,7 +28,7 @@ public class LocationFragment extends Fragment {
             }
         });
         Button clickButton1 = view.findViewById(R.id.button2);
-        clickButton.setOnClickListener(new View.OnClickListener() {
+        clickButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 g.setCity("New York");
@@ -36,8 +36,8 @@ public class LocationFragment extends Fragment {
                 startActivity(i);
             }
         });
-        Button clickButton3 = view.findViewById(R.id.button3);
-        clickButton.setOnClickListener(new View.OnClickListener() {
+        Button clickButton3 = view.findViewById(R.id.button4);
+        clickButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 g.setCity("Las Vegas");

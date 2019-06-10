@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -31,6 +32,7 @@ public class RecyclerView_Config {
         private TextView mArtist;
         private TextView mCity;
         private String date;
+        private Button mButton;
 
         private String key;
 
@@ -41,22 +43,28 @@ public class RecyclerView_Config {
             mDate = (TextView) itemView.findViewById(R.id.textView_eventDate);
             mArtist = (TextView) itemView.findViewById(R.id.textView_eventArtist);
             mCity = (TextView) itemView.findViewById(R.id.textView_eventCity);
+            mButton = (Button) itemView.findViewById(R.id.button_transparent);
         }
-        public void bind(Event event, String key){
+        public void bind(final Event event, String key){
             date = String.valueOf(event.getMonth())+"/"+String.valueOf(event.getDay())+"/"+String.valueOf(event.getYear());
             mName.setText(event.getArtist());
             mDate.setText(date);
             mCity.setText(event.getCity());
             mArtist.setText(event.getClub());
             this.key = key;
-            mName.setOnClickListener(new View.OnClickListener() {
+            mButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
+                    // set globals for event
+                    Globals g = Globals.getInstance();
+                    g.setClubName(String.valueOf(mArtist.getText()));
+                    g.setEvent(event);
+
                     //mName.setText("clicked");
                     Intent intent = new Intent(v.getContext(), ClubPage.class);
                     v.getContext().startActivity(intent);
-                    Globals g = Globals.getInstance();
-                    g.setClubName(String.valueOf(mArtist.getText()));
+
                 }
             });
         }
@@ -78,6 +86,28 @@ public class RecyclerView_Config {
 
         @Override
         public void onBindViewHolder(@NonNull EventItemView eventItemView, int i) {
+//            Globals g = Globals.getInstance();
+//            String city = g.getCity();
+//            String year = g.getYear();
+//            String month = g.getMonth();
+//            String day = g.getDay();
+//
+//            Event event = mEventList.get(i);
+//
+//            if((""+event.getCity()).equals(city) &&
+//                    (""+event.getYear()).equals(year) &&
+//                    (""+event.getMonth()).equals(month) &&
+//                    (""+event.getDay()).equals(day)){
+//                eventItemView.bind(mEventList.get(i), mKeys.get(i));
+//            }else{
+////                mEventList.remove(i);
+////                mKeys.remove(i);
+//            }
+//            if((""+event.getCity()).equals(city)){
+//                eventItemView.bind(mEventList.get(i), mKeys.get(i));
+//            }else{
+//                ;
+//            }
             eventItemView.bind(mEventList.get(i), mKeys.get(i));
         }
 

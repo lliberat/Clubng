@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class PaymentController extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class PaymentController extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+
         ActionBar actionBar = getSupportActionBar();
 
         assert actionBar != null;
@@ -27,9 +29,18 @@ public class PaymentController extends AppCompatActivity {
         NotificationManager notificationManager = (NotificationManager)
                 getSystemService(NOTIFICATION_SERVICE);
         Button PayButton = findViewById(R.id.button5);
+        final Globals g = Globals.getInstance();
+        TextView txt = findViewById(R.id.textView3);
+        txt.setText("USD "+Long.toString(g.getPrice()));
         PayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // add new reservation to user
+                g.getUser().addReservation(g.getEvent());
+                UserModel u = UserModel.getInstance();
+                u.updateReservations(g.getUser(), g.getUser().getReservations());
+
                 openMainActivity();
             }
         });
