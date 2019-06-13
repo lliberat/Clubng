@@ -30,6 +30,9 @@ public class Club {
     }
 
     public void setName(String name) {
+        if(name == null || name.length() < 1) {
+            throw new IllegalArgumentException("Name string cannot be empty/null");
+        }
         this.name = name;
     }
 
@@ -78,6 +81,9 @@ public class Club {
     }
 
     public void setCity(String name) {
-        this.city = city;
+        if(name == null || name.length() < 1) {
+            throw new IllegalArgumentException("City string cannot be empty/null");
+        }
+        this.name = name;
     }
 }
