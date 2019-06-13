@@ -36,7 +36,6 @@ android:
   - build-tools-$ANDROID_BUILD_TOOLS
   - android-$ANDROID_API
   - android-$EMULATOR_API_LEVEL
-<<<<<<< HEAD
   - extra-google-m2repository
 
 before_script:
