@@ -96,7 +96,6 @@
         android:text="Authentication Failed"
         android:textColor="@color/colorText"
         android:textSize="14dp"
-        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"

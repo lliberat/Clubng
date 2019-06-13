@@ -5,14 +5,78 @@
     android:background="@color/colorPrimaryDark"
 
     >
+
    <TextView
+       android:id="@+id/TopText"
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:text="CONFIRMATION"
+       android:layout_alignParentTop="true"
        android:layout_centerInParent="true"
-       android:fontFamily="@font/couturebold"
-       android:textColor="@color/colorAccent"
-       />
+       android:layout_marginTop="50dp"
+       android:textSize="30dp"
+       android:fontFamily="@font/couture"
+       android:text="CONFIRMATION"
+       android:textColor="@color/colorAccent" />
+
+   <TextView
+       android:id="@+id/ArtistName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:layout_below="@+id/TopText"
+       android:layout_marginTop="60dp"
+       android:textSize="50dp"
+       android:fontFamily="@font/couture"
+
+       android:textColor="@color/colorPrimary" />
+
+   <TextView
+       android:id="@+id/Club"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:layout_below="@+id/ArtistName"
+       android:layout_marginTop="10dp"
+       android:textSize="30dp"
+       android:fontFamily="@font/couture"
+
+       android:textColor="@color/colorText" />
+
+   <TextView
+       android:id="@+id/City"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:layout_below="@+id/Club"
+       android:layout_marginTop="10dp"
+       android:textSize="20dp"
+       android:fontFamily="@font/couture"
+
+       android:textColor="@color/colorPrimary"/>
+
+   <TextView
+       android:id="@+id/Date"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:layout_below="@+id/City"
+       android:layout_marginTop="10dp"
+       android:textSize="20dp"
+       android:fontFamily="@font/couture"
+
+       android:textColor="@color/colorPrimary"/>
+
+   <TextView
+       android:id="@+id/Statement"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:layout_alignParentBottom="true"
+       android:layout_marginBottom="20dp"
+       android:textSize="20dp"
+       android:fontFamily="@font/couture"
+
+       android:textColor="@color/colorAccent"/>
 
 
 </RelativeLayout>
