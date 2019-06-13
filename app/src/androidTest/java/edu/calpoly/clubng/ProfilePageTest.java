@@ -45,11 +45,6 @@ public class ProfilePageTest {
 
         ViewInteraction bottomNavigationItemView = onView(
                 allOf(withId(R.id.nav_profile), withContentDescription("Profile"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.footer_nav),
-                                        0),
-                                0),
                         isDisplayed()));
         bottomNavigationItemView.perform(click());
 
@@ -64,41 +59,21 @@ public class ProfilePageTest {
 
         ViewInteraction editText = onView(
                 allOf(withId(R.id.passText), withText("••••••••"), withContentDescription("Password"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.frag_container),
-                                        0),
-                                3),
                         isDisplayed()));
         editText.check(matches(withText("••••••••")));
 
         ViewInteraction editText2 = onView(
                 allOf(withId(R.id.comfirmPassText), withText("••••••••••••••••"), withContentDescription("confirm password"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.frag_container),
-                                        0),
-                                4),
                         isDisplayed()));
         editText2.check(matches(withText("••••••••••••••••")));
 
         ViewInteraction button = onView(
                 allOf(withId(R.id.changeBtn),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.frag_container),
-                                        0),
-                                5),
                         isDisplayed()));
         button.check(matches(isDisplayed()));
 
         ViewInteraction button2 = onView(
                 allOf(withId(R.id.logoutBtn),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(R.id.frag_container),
-                                        0),
-                                6),
                         isDisplayed()));
         button2.check(matches(isDisplayed()));
     }
